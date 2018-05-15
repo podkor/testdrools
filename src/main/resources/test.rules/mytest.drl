@@ -1,0 +1,11 @@
+package test.rules
+
+import test.model.Item;
+import test.model.Category;
+
+rule "Classify Item - Low Range"
+ when
+ $i: Item(cost < 200)
+ then
+ $i.setCategory(Category.LOW_RANGE);
+end
